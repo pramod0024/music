@@ -1,0 +1,219 @@
+@import "../scss/variable";
+@import "../scss/vendor";
+@import "../scss/mixin";
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;  
+    font-weight: 300;
+}
+a,a:hover{
+    text-decoration: none;
+}
+
+.main_header{
+ width: 100vw;
+ line-height: 10rem;
+ background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) $main-color;
+
+
+  & .navbar-brand{
+      color: $text-color;
+      animation: music 1s linear infinite;
+      animation-direction: alternate;
+      & .fas{
+          font-size: 4rem;
+      }
+      @keyframes music {
+          
+        from{
+            transform: rotate(5deg);
+        }
+        to{
+            transform: rotate(-5deg);
+        }
+      }
+      &:hover{
+        filter: drop-shadow(0 1.5rem 1 rem rgba(255,255,255,0.5));
+    }
+  }
+  & .navbar-nav{
+      padding-left: 15rem;
+
+      & .nav-item .nav-link{
+          font-size: 1.6rem;
+          color: $text-color;
+          text-transform: uppercase;
+          padding-right: 3rem;
+      }
+      
+      & .nav-item:last-child > .nav-link{
+          padding-right: 0%;
+      }
+      
+    
+      
+  }
+  & .nav-item:hover > .nav-link,
+  & .navbar-brand:hover,.navbar-brand > .fas:hover{
+      color: $primary-color;
+  }
+  & .my_btn{
+    @include mybtn;
+    
+    &:hover{
+        @include hovereffects;
+    }
+}
+
+}
+
+.header_hero{
+    width: 100%;
+    height: 80vh;
+    background: $main-color;
+
+    &__text{
+        // width: inherit;
+        height: 80vh;
+        background: black;
+        @include cotent-center(flex-start);
+    }
+    & h2{
+        color: $text-color;
+        font-size: 6rem;
+        margin-bottom: 3rem;
+        line-height: 150%;
+        font-weight: 600;
+
+        & span{
+            color: $primary-color;
+            text-transform: capitalize;
+        }
+    }
+    & p{
+        font-size: 1.8rem;
+        color: $text-color;
+        margin-bottom: 5rem;
+    }
+
+    & .header_text__btn{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        & a{
+            @include mybtn;
+        }
+        & a:hover{
+            @include hovereffects;
+        }
+        & #btn__2{
+            margin-left: 2rem;
+            background-color: rgba(255,255,255,0.5);
+
+            &:hover{
+                @include hovereffects;
+            }
+
+        }
+
+    }
+
+    &__img{
+        height: 70vh;
+       // background: black;
+
+        @include cotent-center(flex-end);
+        animation: anime-hero 10s linear infinite alternate;
+
+        @keyframes anime-hero {
+            from{
+                transform: scale(0.9);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+
+        & img{
+            filter: drop-shadow(0 1.5rem 1rem rgba(0,0,0,0.5));
+        }
+    }
+
+}
+
+.navbar-toggler{
+    background-color: rgba(255,255,255,0.5);
+    margin-right: 1rem;
+}
+.about_hero{
+    width: 100%;
+    height: 80vh;
+    background: $main-color;
+    font-size: 1.6rem;
+    color: $text-color;
+    line-height: 2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.gallery_hero{
+    width: 100%;
+    height: auto;
+    background: $main-color;
+}
+
+
+.contact-form{
+    background: #fff;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 70%;
+}
+.contact-form .form-control{
+    border-radius:1rem;
+}
+.contact-image{
+    text-align: center;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: -3%;
+    transform: rotate(29deg);
+}
+.contact-form form{
+    padding: 14%;
+}
+.contact-form form .row{
+    margin-bottom: -7%;
+}
+.contact-form h3{
+    margin-bottom: 8%;
+    margin-top: -10%;
+    text-align: center;
+    color: #0062cc;
+}
+.contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #dc3545;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+.btnContactSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+}
